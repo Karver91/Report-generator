@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "name": "Alice Johnson",
+        "email": "alice@example.com",
+        "department": "Marketing",
+        "hours": 160,
+        "rate": 50,
+        "payout": "$8000"
+    },
+    {
+        "id": 2,
+        "name": "Bob Smith",
+        "email": "bob@example.com",
+        "department": "Design",
+        "hours": 150,
+        "rate": 40,
+        "payout": "$6000"
+    },
+    {
+        "id": 3,
+        "name": "Carol Williams",
+        "email": "carol@example.com",
+        "department": "Design",
+        "hours": 170,
+        "rate": 60,
+        "payout": "$10200"
+    },
+    {
+        "id": 101,
+        "name": "Grace Lee",
+        "email": "grace@example.com",
+        "department": "HR",
+        "hours": 160,
+        "rate": 45,
+        "payout": "$7200"
+    },
+    {
+        "id": 102,
+        "name": "Henry Martin",
+        "email": "henry@example.com",
+        "department": "Marketing",
+        "hours": 150,
+        "rate": 35,
+        "payout": "$5250"
+    },
+    {
+        "id": 103,
+        "name": "Ivy Clark",
+        "email": "ivy@example.com",
+        "department": "HR",
+        "hours": 158,
+        "rate": 38,
+        "payout": "$6004"
+    },
+    {
+        "id": 201,
+        "name": "Karen White",
+        "email": "karen@example.com",
+        "department": "Sales",
+        "hours": 165,
+        "rate": 50,
+        "payout": "$8250"
+    },
+    {
+        "id": 202,
+        "name": "Liam Harris",
+        "email": "liam@example.com",
+        "department": "HR",
+        "hours": 155,
+        "rate": 42,
+        "payout": "$6510"
+    },
+    {
+        "id": 203,
+        "name": "Mia Young",
+        "email": "mia@example.com",
+        "department": "Sales",
+        "hours": 160,
+        "rate": 37,
+        "payout": "$5920"
+    }
+]

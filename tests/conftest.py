@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-DATA_DIR_NAME = "data"
+DATA_DIR_NAME = "testing_data"
 
 @pytest.fixture
 def current_dir():

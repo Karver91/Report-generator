@@ -24,7 +24,7 @@ class Repository:
             result.extend(data)
         return result
 
-    def write_file(self, data: list[ModelInterface]):
+    def write_file(self, data: list[dict]):
         file_manager: type[BaseFileManager] = FileManagerFactory.create(file_path=settings.output_file_format)
         fm_instance = file_manager(file_path=self.report)
         fm_instance.write_file(data=data)
