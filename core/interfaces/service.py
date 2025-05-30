@@ -18,6 +18,7 @@ class ServiceInterface(ABC):
 
 class BaseService(ServiceInterface):
     __report_type = None
+
     def __init__(self, repository):
         self.repository = repository
 
@@ -31,9 +32,9 @@ class BaseService(ServiceInterface):
         raise NotImplementedError
 
     @staticmethod
-    def _serialize_model(data: list[dict], model) -> list[ModelInterface]:
-        return [model(**item) for item in data]
+    def _serialize_model(data: list[ModelInterface]) -> list[dict]:
+        return [item.to_dict() for item in data]
 
     @staticmethod
-    def _deserialize_model(data: list[ModelInterface]) -> list[dict]:
-        return [item.to_dict() for item in data]
+    def _deserialize_model(data: list[dict], model) -> list[ModelInterface]:
+        return [model(**item) for item in data]

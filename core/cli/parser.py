@@ -9,6 +9,6 @@ def get_parser():
                         help=f"Тип отчёта для генерации. "
                              f"Варианты: {[service.get_report_type() for service in BaseService.__subclasses__()]}",
                         default="payout")
-    parser.add_argument("files", nargs="+", help="Пути к CSV-файлам с данными")
+    parser.add_argument("files", nargs="+", help="Пути к файлам с данными")
     parser.add_argument("-o", "--output", type=str, help="Путь к файлу отчета", default="report")
     return parser

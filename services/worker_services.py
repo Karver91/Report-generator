@@ -22,10 +22,10 @@ class WorkerPayout(BaseService):
 
     def process(self):
         data = self.repository.reed_files()
-        serialized: list[ModelInterface] = self._serialize_model(data=data, model=self.model_input)
-        output = self._get_data_output(data=serialized)
-        deserialized: list[dict] = self._deserialize_model(data=output)
-        self.repository.write_file(data=deserialized)
+        deserialized: list[ModelInterface] = self._deserialize_model(data=data, model=self.model_input)
+        output = self._get_data_output(data=deserialized)
+        serialized: list[dict] = self._serialize_model(data=output)
+        self.repository.write_file(data=serialized)
 
     @classmethod
     def get_report_type(cls):
