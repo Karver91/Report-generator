@@ -4,14 +4,30 @@ from core.interfaces.model import ModelInterface
 
 
 class ServiceInterface(ABC):
+    __report_type = None
+
     @abstractmethod
     def process(self):
         raise NotImplementedError
 
+    @classmethod
+    @abstractmethod
+    def get_report_type(cls):
+        raise NotImplementedError
+
 
 class BaseService(ServiceInterface):
+    __report_type = None
+    def __init__(self, repository):
+        self.repository = repository
+
     @abstractmethod
     def process(self):
+        raise NotImplementedError
+
+    @classmethod
+    @abstractmethod
+    def get_report_type(cls):
         raise NotImplementedError
 
     @staticmethod

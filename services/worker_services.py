@@ -7,6 +7,7 @@ from repository.base import Repository
 
 class WorkerPayout(BaseService):
     """Отвечает за бизнес-логику для формирования отчета по зарплатам"""
+    __report_type = "payout"
 
     def __init__(
             self,
@@ -17,6 +18,7 @@ class WorkerPayout(BaseService):
         self.repository = repository
         self.model_input = model_input
         self.model_output = model_output
+        super().__init__(repository)
 
     def process(self):
         data = self.repository.reed_files()
@@ -24,6 +26,10 @@ class WorkerPayout(BaseService):
         output = self._get_data_output(data=serialized)
         deserialized: list[dict] = self._deserialize_model(data=output)
         self.repository.write_file(data=deserialized)
+
+    @classmethod
+    def get_report_type(cls):
+        return cls.__report_type
 
     def _get_data_output(self, data):
         result = []
