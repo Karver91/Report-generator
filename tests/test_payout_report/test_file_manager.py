@@ -29,6 +29,13 @@ def test_read(input_data_paths, ext, manager):
     assert len(result) > 0
 
 
+@pytest.mark.parametrize(
+    "ext, manager",
+    [
+        ("csv", CSVFileManager),
+        ("json", JSONFileManager)
+    ]
+)
 def test_file_manager_factory(ext, manager):
     file_path = f"data.{ext}"
     result = FileManagerFactory.create(file_path=file_path)

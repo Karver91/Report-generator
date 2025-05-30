@@ -1,7 +1,6 @@
 import os.path
 
 from config import settings
-from core.interfaces.model import ModelInterface
 from repository.file_manager.base import BaseFileManager
 from repository.file_manager.simple_file_manager_factory import FileManagerFactory
 
