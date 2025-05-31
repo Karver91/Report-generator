@@ -15,10 +15,12 @@ class CLIView(ViewInterface):
     def get_col_width(cls, data: list[dict]) -> dict[str, int]:
         headers = data[0].keys()
         col_widths = {header: len(header) for header in headers}
-        for row in data:
+        for i in range(len(data)):
             for header in headers:
-                cell_value = cls.__encode_value(row[header])
-                col_widths[header] = max(len(cell_value), col_widths[header])
+                cell = data[i][header]
+                encode_value = cls.__encode_value(cell)
+                col_widths[header] = max(len(encode_value), col_widths[header])
+                data[i][header] = encode_value
         return col_widths
 
     @staticmethod
