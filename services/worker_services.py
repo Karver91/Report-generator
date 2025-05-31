@@ -26,6 +26,7 @@ class WorkerPayout(BaseService):
         output = self._get_data_output(data=deserialized)
         serialized: list[dict] = self._serialize_model(data=output)
         self.repository.write_file(data=serialized)
+        return serialized
 
     @classmethod
     def get_report_type(cls):

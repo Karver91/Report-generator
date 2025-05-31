@@ -2,8 +2,9 @@ import os
 
 
 class Settings:
-    __OUTPUT_DATA_DIR_NAME = 'data'
-    __OUTPUT_FILE_FORMAT = "json"
+    __OUTPUT_DATA_DIR_NAME: str = 'data'
+    __OUTPUT_FILE_FORMAT: str = "json"
+    __PRINT_TO_DISPLAY: bool = True
 
     @property
     def output_file_format(self):
@@ -16,6 +17,10 @@ class Settings:
         if not os.path.exists(data_dir_path):
             os.makedirs(data_dir_path)
         return data_dir_path
+
+    @property
+    def print_to_display(self):
+        return self.__PRINT_TO_DISPLAY
 
 
 settings = Settings()
