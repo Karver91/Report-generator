@@ -1,4 +1,3 @@
-import sys
 from argparse import ArgumentParser, Namespace
 
 from controller import ExecutionController
@@ -8,8 +7,6 @@ from views.cli import CLIView
 
 
 def main():
-    sys.argv = ['main.py', '/home/oleg/PythonProject/test_tasks/Workmate/tests/testing_data/data1.csv']
-
     cli_parser: ArgumentParser = get_parser()
     args: Namespace = cli_parser.parse_args()
     view = CLIView()
